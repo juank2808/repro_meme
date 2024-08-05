@@ -1,17 +1,19 @@
 import pygame
-import os
+from pathlib import Path
 
 def repro_audio():
-    route = os.getcwd() 
-    audio_route = os.path.join(route,'audio','vamos_a_tomar_cafe.mp3')
-    print(audio_route)
+ 
+    route = Path.cwd()
+    audio_route = route / 'audio' / 'vamos_a_tomar_cafe.mp3'
+    
+    print(route)
     pygame.mixer.init()
     pygame.mixer.music.load(audio_route)
     pygame.mixer.music.play()
 
     while pygame.mixer.music.get_busy():
         pygame.time.Clock().tick(10)
-
+# repro_audio()
 def main():
     while True:
         print("Elige una Opcion:")
