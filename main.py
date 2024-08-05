@@ -11,7 +11,7 @@ def repro_audio():
 
     while pygame.mixer.music.get_busy():
         pygame.time.Clock().tick(10)
-repro_audio()
+
 def main():
     while True:
         print("Elige una Opcion:")
